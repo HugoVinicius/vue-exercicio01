@@ -1,7 +1,5 @@
 # exercicio-01
 
-arquivo/Capturar.JPG
-
 <img src="arquivo/Capturar.JPG" alt="Projeto Final" />
 
 
