@@ -1,0 +1,91 @@
+<template>
+    <div id="mainContent">
+        <section>
+            <PostArticle v-for="(materiaExibicao) in dados.Materias" :key="materiaExibicao" :materia="materiaExibicao"/>            
+        </section>
+        <aside>
+            <Sidebar :menuAside="dados.menuAsideLink"/>
+        </aside>
+    </div>
+</template>
+
+<script>
+import Sidebar from './Sidebar'
+import PostArticle from './PostArticle'
+
+export default {
+    name:"Header",
+    components: {
+        Sidebar,
+        PostArticle
+    },
+    props:{
+        dados:{
+            Type: Object
+        }
+    },    
+}
+</script>
+
+<style>
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+#mainContent{
+    min-height: 500px;
+    margin: 0px auto; 
+    display: flex; 
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;   
+}
+
+#mainContent section{
+    background: rgba(221, 221, 221, .7);  
+    flex-grow: 1;
+}
+
+#mainContent aside{
+    background: rgba(110, 110, 110, 0.7);  
+    width: 70%;
+}
+
+.menuLateral {
+    display: flex;
+    flex-direction: column; 
+    text-align: center;
+}
+  
+.menuLateral  li a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 5px;
+    padding: 10px;
+}  
+
+.menuLateral li a:hover {
+    background-color: rgba(110, 110, 110, 0.7);  
+}
+
+.notica  {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;   
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+.notica > img{
+    width: 300px;
+}
+
+.notica > div {
+    text-align: justify;
+    margin-left: 10px;
+}
+</style>
